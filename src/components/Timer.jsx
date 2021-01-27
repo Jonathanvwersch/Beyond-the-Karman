@@ -10,33 +10,19 @@ function Timer({ time }) {
 
   useEffect(() => {
     const interval = setInterval(() => setTimeElapsed(new Date()), 1000)
-    setDays(
-      Math.floor(
-        (launchTime.getTime() - timeElapsed.getTime()) / (3600 * 24 * 1000)
-      )
-    )
+    const newTime = launchTime.getTime() - timeElapsed.getTime()
+    setDays(Math.floor(newTime / (3600 * 24 * 1000)))
 
-    setHours(
-      Math.floor((launchTime.getTime() - timeElapsed.getTime()) / (3600 * 1000))
-    )
+    setHours(Math.floor(newTime / (3600 * 1000) - days * 24))
 
-    setMinutes(
-      Math.floor(
-        ((launchTime.getTime() - timeElapsed.getTime()) / (3600 * 1000) -
-          hours) *
-          60
-      )
-    )
+    setMinutes(Math.floor((newTime / (3600 * 1000) - days * 24 - hours) * 60))
 
     setSeconds(
       Math.floor(
-        (((launchTime.getTime() - timeElapsed.getTime()) / (3600 * 1000) -
-          hours) *
-          60 -
-          minutes) *
-          60
+        ((newTime / (3600 * 1000) - days * 24 - hours) * 60 - minutes) * 60
       )
     )
+
     return () => {
       clearInterval(interval)
     }
