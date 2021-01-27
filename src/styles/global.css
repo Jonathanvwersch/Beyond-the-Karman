@@ -1,0 +1,50 @@
+/* ./src/styles/global.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: black;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 3rem;
+  }
+}
+
+/* width */
+*::-webkit-scrollbar {
+  width: 6px;
+  cursor: auto;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  background: black;
+  cursor: auto;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: white;
+  cursor: auto;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: gray;
+  cursor: pointer !important;
+}
+/*# sourceMappingURL=global.css.map */
+
+*:focus {
+  outline: none!important;
+  box-sizing: border-box;
+}
