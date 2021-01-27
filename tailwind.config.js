@@ -35,6 +35,13 @@ module.exports = {
         gray: {
           DEFAULT:'#6D6D6D',
         }
+      },
+
+      height : {
+        '112': '28 rem',
+        '128': '32 rem',
+        '144': '36 rem',
+        '160': '40 rem',
       }
         
     },
