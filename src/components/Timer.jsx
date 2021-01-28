@@ -28,31 +28,43 @@ function Timer({ time }) {
     }
   }, [timeElapsed])
 
+  const daysTime = days || days === 0 ? (days < 10 ? `0${days}` : days) : "??"
+  const hoursTime =
+    hours || hours === 0 ? (hours < 10 ? `0${hours}` : hours) : "??"
+  const minutesTime =
+    minutes || minutes === 0
+      ? minutes < 0
+        ? minutes + 60
+        : minutes < 10
+        ? `0${minutes}`
+        : minutes
+      : "??"
+  const secondsTime =
+    seconds || seconds === 0
+      ? seconds < 0
+        ? seconds + 60
+        : seconds < 10
+        ? `0${seconds}`
+        : seconds
+      : "??"
+
   return (
-    <div className="w-full lg:w-3/4 text-white">
+    <div className="text-gray-400">
       <div className="flex py-2 h-full items-center">
-        <div className="h-full flex flex-col flex-1 justify-center items-center">
-          <h1 className=" font-mono text-2xl lg:text-4xl">
-            {days || days === 0 ? days : "??"}
-          </h1>
+        <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
+          <h1 className="font-mono text-2xl lg:text-4xl">{daysTime}</h1>
           <h3 className="text-md">Days</h3>
         </div>
-        <div className="h-full flex flex-col flex-1 justify-center items-center">
-          <h1 className="font-mono text-2xl lg:text-4xl">
-            {hours || hours === 0 ? hours : "??"}
-          </h1>
+        <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
+          <h1 className="font-mono text-2xl lg:text-4xl">{hoursTime}</h1>
           <h3 className="text-md">Hours</h3>
         </div>
-        <div className="h-full flex flex-col flex-1 justify-center items-center">
-          <h1 className="font-mono text-2xl lg:text-4xl">
-            {minutes || minutes === 0 ? minutes : "??"}
-          </h1>
+        <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
+          <h1 className="font-mono text-2xl lg:text-4xl">{minutesTime}</h1>
           <h3 className="text-md">Mins</h3>
         </div>
         <div className="h-full flex flex-col flex-1 justify-center items-center">
-          <h1 className="font-mono text-2xl lg:text-4xl">
-            {seconds || seconds === 0 ? seconds : "??"}
-          </h1>
+          <h1 className="font-mono text-2xl lg:text-4xl">{secondsTime}</h1>
           <h3 className="text-md">Secs</h3>
         </div>
       </div>

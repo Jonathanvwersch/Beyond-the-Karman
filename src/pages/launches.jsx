@@ -44,7 +44,7 @@ const Launches = () => {
               <h4 className="text-white text-lg text-center mb-4 max-sm:text-sm">
                 {launches[0].launch_service_provider.name}
               </h4>
-              <Timer time={launches[0].window_start} />
+              <Timer time={launches[0].net} />
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const Launches = () => {
                     <h4 className="text-white text-center mb-4 text-sm lg:text-lg">
                       {launch.launch_service_provider.name}
                     </h4>
-                    <Timer time={launch.window_start} />
+                    <Timer time={launch.net} />
                   </div>
                 </div>
               )
