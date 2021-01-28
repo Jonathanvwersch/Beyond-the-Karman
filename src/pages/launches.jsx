@@ -25,20 +25,22 @@ const Launches = () => {
     <Layout>
       <SEO title="Launches" />
       {launches ? (
-        <div className="mt-32 mb-100 btk-container bg-launch-image bg-contain">
-          <h1 className="text-white text-2xl mb-6 md:text-4xl">Next Launch</h1>
+        <div className="mt-24 mb-100 btk-container bg-launch-image bg-contain">
+          <h1 className="text-white mt-10 text-2xl mb-6 md:text-4xl">
+            Next Launch
+          </h1>
           <div
-            className="p-4 md:p-8 flex w-full mb-16 flex-col rounded lg:flex-row"
+            className="p-4 md:p-8 flex w-full mb-16 flex-col rounded-xl lg:flex-row"
             style={{ background: "rgba(56, 56, 255, 0.1)" }}
           >
             <div className="flex-1 mb-4 lg:mb-0 relative">
               <img
-                className="h-56 md:h-96 w-full object-cover z-0"
+                className="h-56 md:h-96 w-full object-cover z-0 rounded-xl"
                 src={launches[0].image}
                 alt={launches[0].name}
               ></img>
               <div
-                className="flex text-white bg-green-500 px-2 md:px-4 items-center rounded z-10 absolute right-2 top-2"
+                className="flex text-white bg-green-500 font-bold px-2 md:px-4 items-center rounded z-10 absolute right-2 top-2"
                 style={{
                   backgroundColor: `${
                     launches[0].status.name === "Go"
@@ -72,17 +74,17 @@ const Launches = () => {
               return (
                 <div
                   key={launch.id}
-                  className="p-4 md:p-8 flex flex-col mb-10 rounded"
-                  style={{ flex: "50%", background: "rgba(56, 56, 255, 0.1)" }}
+                  className="p-4 md:p-8 mr-2 ml-2 bg-green-50 flex flex-col mb-10 rounded-xl shadow-lg"
+                  style={{ flex: "48%", background: "rgba(56, 56, 255, 0.1)" }}
                 >
                   <div className="w-full h-3/4 mb-4 relative">
                     <img
-                      className="object-cover w-full h-56 z-0 md:h-96"
+                      className="object-cover w-full h-56 z-0 rounded-xl md:h-96"
                       src={launch.image}
                       alt={launch.name}
                     ></img>
                     <div
-                      className="flex text-white bg-green-500 px-2 md:px-4  items-center rounded z-10 absolute right-2 top-2"
+                      className="flex text-white bg-green-500 px-2 md:px-4 font-bold items-center rounded z-10 absolute right-2 top-2"
                       style={{
                         backgroundColor: `${
                           launch.status.name === "Go"

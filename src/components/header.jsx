@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const Header = () => {
   const [open, setOpen] = useState(false)
   return (
-    <header className="btk-container w-full cursor-pointer fixed px-8 md:px-10 lg:px-12 py-6 z-50 bg-black select-none top-0 left-0 right-0 flex justify-between items-center">
+    <header className="btk-container w-full cursor-pointer fixed z-50 bg-black select-none top-0 left-0 right-0 flex justify-between items-center">
       <Link to="/">
         <Logo />
       </Link>
