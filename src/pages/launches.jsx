@@ -30,14 +30,28 @@ const Launches = () => {
         <div className="py-28">
           <h1 className="text-white text-2xl mb-6 md:text-4xl">Next Launch</h1>
           <div className="p-4 flex w-full mb-16 flex-col lg:flex-row">
-            <div className=" flex-1 mb-4 lg:pr-4 lg:mb-0">
+            <div className="flex-1 mb-4 lg:mb-0 relative">
               <img
-                className="h-56 md:h-72 lg:h-96 object-cover"
+                className="h-56 md:h-96 w-full object-cover z-0"
                 src={launches[0].image}
                 alt={launches[0].name}
               ></img>
+              <div
+                className="flex text-white bg-green-500 px-2 md:px-4 items-center rounded z-10 absolute right-2 top-2"
+                style={{
+                  backgroundColor: `${
+                    launches[0].status.name === "Go"
+                      ? "green"
+                      : launches[0].status.name === "TBD"
+                      ? "orange"
+                      : "red"
+                  }`,
+                }}
+              >
+                {launches[0].status.name}
+              </div>
             </div>
-            <div className="flex flex-col items-center flex-1 lg:pl-4 ">
+            <div className="flex flex-col items-center flex-1">
               <h3 className="text-white mb-2 text-md md:text-xl lg:text-2xl text-center font-bold">
                 {launches[0].name}
               </h3>
@@ -60,12 +74,26 @@ const Launches = () => {
                   className="p-4 flex flex-col mb-10"
                   style={{ flex: "50%" }}
                 >
-                  <div className="w-full h-3/4 mb-4">
+                  <div className="w-full h-3/4 mb-4 relative">
                     <img
-                      className="object-cover w-full h-56 md:h-72 lg:h-96"
+                      className="object-cover w-full h-56 z-0 md:h-96"
                       src={launch.image}
                       alt={launch.name}
                     ></img>
+                    <div
+                      className="flex text-white bg-green-500 px-2 md:px-4  items-center rounded z-10 absolute right-2 top-2"
+                      style={{
+                        backgroundColor: `${
+                          launch.status.name === "Go"
+                            ? "green"
+                            : launch.status.name === "TBD"
+                            ? "orange"
+                            : "red"
+                        }`,
+                      }}
+                    >
+                      {launch.status.name}
+                    </div>
                   </div>
                   <div className="flex flex-col items-center w-full">
                     <h3 className="text-white mb-2 md:text-xl lg:text-2xl text-center font-bold">
