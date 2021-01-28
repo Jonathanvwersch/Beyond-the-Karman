@@ -29,10 +29,7 @@ const Launches = () => {
           <h1 className="text-white mt-10 text-2xl mb-6 md:text-4xl">
             Next Launch
           </h1>
-          <div
-            className="p-4 md:p-8 flex w-full mb-16 flex-col rounded-xl lg:flex-row"
-            style={{ background: "rgba(56, 56, 255, 0.1)" }}
-          >
+          <div className="p-4 md:p-8 flex bg-card w-full mb-16 flex-col rounded-xl lg:flex-row">
             <div className="flex-1 mb-4 lg:mb-0 relative">
               <img
                 className="h-56 md:h-96 w-full object-cover z-0 rounded-xl"
@@ -74,8 +71,8 @@ const Launches = () => {
               return (
                 <div
                   key={launch.id}
-                  className="p-4 md:p-8 mr-2 ml-2 bg-green-50 flex flex-col mb-10 rounded-xl shadow-lg"
-                  style={{ flex: "48%", background: "rgba(56, 56, 255, 0.1)" }}
+                  className="p-4 md:p-8 mr-2 ml-2 bg-card bg-green-50 flex flex-col mb-10 rounded-xl shadow-lg"
+                  style={{ flex: "48%" }}
                 >
                   <div className="w-full h-3/4 mb-4 relative">
                     <img

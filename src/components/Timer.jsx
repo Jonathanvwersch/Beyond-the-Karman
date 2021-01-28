@@ -65,7 +65,7 @@ function Timer({ time }) {
   const dateAndYear = `${launchDay}/${launchMonth}/${launchYear}, ${hour}:${minute}:${second} UTC`
 
   return (
-    <div className="flex flex-col items-center text-gray-400">
+    <div className="flex flex-col items-center text-gray-200">
       <div className="flex py-2 h-full items-center">
         <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
           <h1 className="font-mono text-2xl lg:text-4xl">{displayDays}</h1>

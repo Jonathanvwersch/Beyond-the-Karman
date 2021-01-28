@@ -20,6 +20,20 @@ const News = () => {
     })()
   }, [])
 
+  const getTime = time => {
+    const launchDate = new Date(time)
+
+    let launchDay = launchDate.getDate()
+    launchDay = launchDay < 10 ? `0${launchDay}` : launchDay
+
+    let launchMonth = launchDate.getMonth() + 1
+    launchMonth = launchMonth < 10 ? `0${launchMonth}` : launchMonth
+
+    const launchYear = launchDate.getFullYear()
+
+    return `${launchDay}/${launchMonth}/${launchYear}`
+  }
+
   return (
     <Layout>
       <SEO title="News" />
@@ -28,23 +42,36 @@ const News = () => {
           <div className="w-full flex flex-wrap">
             {news.map(newsStory => {
               return (
-                <div
-                  key={newsStory.id}
-                  className="p-6 md:p-8 flex flex-col md:flex-row mb-10 w-full rounded-xl"
-                  style={{ background: "rgba(56, 56, 255, 0.1)" }}
-                >
-                  <img
-                    className="object-cover rounded-xl mb-6 md:mb-0 w-full md:w-1/3 h-48 md:h-64"
-                    src={newsStory.imageUrl}
-                    alt={newsStory.title}
-                  ></img>
-                  <div className="flex flex-col items-center md:ml-8 w-full">
-                    <h3 className="text-white mb-2 text-md md:text-lg lg:text-xl text-center font-bold">
-                      {newsStory.title}
-                    </h3>
-                    <p className="text-gray-200">{newsStory.summary}</p>
+                <a href={newsStory.url}>
+                  <div
+                    key={newsStory.id}
+                    className="p-6 md:p-8 flex cursor-pointer flex-col md:flex-row mb-10 w-full rounded-xl bg-card hover:bg-card-hover"
+                  >
+                    <img
+                      className="object-cover rounded-xl mb-6 md:mb-0 w-full md:w-2/5 h-48 md:h-64"
+                      src={newsStory.imageUrl}
+                      alt={newsStory.title}
+                    ></img>
+                    <div className="flex flex-col items-center justify-between md:ml-8 w-full">
+                      <div>
+                        <div className="flex w-full text-gray-400 justify-between mb-4 text-sm">
+                          <h4>{newsStory.newsSite}</h4>
+                          <h4>{getTime(newsStory.publishedAt)}</h4>
+                        </div>
+                        <h3 className="text-white mb-2 text-md md:text-lg lg:text-xl text-center font-bold">
+                          {newsStory.title}
+                        </h3>
+                        <p className="text-gray-200 tex-center">
+                          {newsStory.summary}
+                        </p>
+                      </div>
+
+                      <button className="rounded-md px-4 py-2 mt-6 bg-gray-900 text-white hover:bg-gray-800">
+                        Read article
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </a>
               )
             })}
           </div>

@@ -6,7 +6,7 @@ module.exports = {
       backgroundImage: theme => ({
          'hero-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/hero-image.jpg')",
          '404-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/404-image.jpg')",
-         'launch-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/launch-image-2.jpg')",
+         'launch-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/launch-image.jpg')",
         }),
        fontFamily: {
         mono: ["Space Mono", "monospace"],
@@ -42,6 +42,11 @@ module.exports = {
         '128': '32 rem',
         '144': '36 rem',
         '160': '40 rem',
+      },
+
+      backgroundColor : {
+        'card': "rgba(56, 56, 255, 0.1)",
+        'card-hover': "rgba(56, 56, 255, 0.2)"
       }
         
     },
