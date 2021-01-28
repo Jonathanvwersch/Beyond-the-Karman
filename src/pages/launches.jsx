@@ -6,9 +6,6 @@ import Timer from "../components/Timer"
 
 const Launches = () => {
   const [launches, setLaunches] = useState()
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => [setLoading(false)], [])
 
   useEffect(() => {
     ;(async () => {
@@ -30,7 +27,10 @@ const Launches = () => {
       {launches ? (
         <div className="mt-32 mb-100 btk-container bg-launch-image bg-contain">
           <h1 className="text-white text-2xl mb-6 md:text-4xl">Next Launch</h1>
-          <div className="p-4 flex w-full mb-16 flex-col lg:flex-row">
+          <div
+            className="p-4 md:p-8 flex w-full mb-16 flex-col rounded lg:flex-row"
+            style={{ background: "rgba(56, 56, 255, 0.1)" }}
+          >
             <div className="flex-1 mb-4 lg:mb-0 relative">
               <img
                 className="h-56 md:h-96 w-full object-cover z-0"
@@ -72,8 +72,8 @@ const Launches = () => {
               return (
                 <div
                   key={launch.id}
-                  className="p-4 flex flex-col mb-10"
-                  style={{ flex: "50%" }}
+                  className="p-4 md:p-8 flex flex-col mb-10 rounded"
+                  style={{ flex: "50%", background: "rgba(56, 56, 255, 0.1)" }}
                 >
                   <div className="w-full h-3/4 mb-4 relative">
                     <img

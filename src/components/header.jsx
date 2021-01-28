@@ -40,6 +40,14 @@ const Header = () => {
         <div
           className="group flex flex-col h-10 w-10 justify-center items-end"
           onClick={() => setOpen(prevState => !prevState)}
+          role="button"
+          aria-label="menu button"
+          tabIndex="0"
+          onKeyDown={e => {
+            if (e.target.value === "Enter") {
+              setOpen(prevState => !prevState)
+            }
+          }}
         >
           <span className="w-6 h-0.5 bg-white"></span>
           <span

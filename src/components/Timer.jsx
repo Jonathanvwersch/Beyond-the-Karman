@@ -26,7 +26,7 @@ function Timer({ time }) {
     return () => {
       clearInterval(interval)
     }
-  }, [timeElapsed])
+  }, [timeElapsed, days, hours, launchTime, minutes])
 
   const displayDays =
     days || days === 0 ? (days < 10 ? `0${days}` : days) : "??"
