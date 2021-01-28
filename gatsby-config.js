@@ -8,6 +8,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
+      {
+    resolve: "gatsby-plugin-react-svg",
+    options: {
+      rule: {
+        include: /assets/ // Where the animated svgs are.
+      }
+    }
+  },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

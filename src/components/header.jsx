@@ -19,6 +19,12 @@ const Header = () => {
           }
         >
           <Link
+            to="/"
+            className=" mr-6 max-sm:mr-0 max-sm:mb-6 hover:text-gray-400"
+          >
+            Home
+          </Link>
+          <Link
             to="/news"
             className=" mr-6 max-sm:mr-0 max-sm:mb-6 hover:text-gray-400"
           >
