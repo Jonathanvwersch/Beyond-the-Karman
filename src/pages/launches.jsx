@@ -27,7 +27,7 @@ const Launches = () => {
     <Layout>
       <SEO title="Launches" />
       {launches ? (
-        <div className="py-28">
+        <div className="pt-28 pb-36">
           <h1 className="text-white text-2xl mb-6 md:text-4xl">Next Launch</h1>
           <div className="p-4 flex w-full mb-16 flex-col lg:flex-row">
             <div className="flex-1 mb-4 lg:mb-0 relative">
