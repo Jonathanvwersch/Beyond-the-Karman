@@ -6,7 +6,7 @@ module.exports = {
       backgroundImage: theme => ({
          'hero-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/hero-image.jpg')",
          '404-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/404-image.jpg')",
-         'launch-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/launch-image.jpg')",
+         'launch-image': "url('https://j-vw.s3.eu-west-2.amazonaws.com/launch-image-2.jpg')",
         }),
        fontFamily: {
         mono: ["Space Mono", "monospace"],

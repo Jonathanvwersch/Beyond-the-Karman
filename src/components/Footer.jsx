@@ -2,7 +2,7 @@ import React from "react"
 
 function Footer() {
   return (
-    <footer className="w-full flex items-center justify-end text-white">
+    <footer className="btk-container w-full flex items-center text-sm justify-end text-white z-100">
       © {new Date().getFullYear()} Beyond the Karman
     </footer>
   )

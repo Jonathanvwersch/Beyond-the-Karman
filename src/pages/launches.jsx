@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
+import LoadingSpinner from "../components/LoadingSpinner"
 import SEO from "../components/seo"
 import Timer from "../components/Timer"
 
@@ -27,7 +28,7 @@ const Launches = () => {
     <Layout>
       <SEO title="Launches" />
       {launches ? (
-        <div className="pt-28 pb-36">
+        <div className="mt-32 mb-100 btk-container bg-launch-image bg-contain">
           <h1 className="text-white text-2xl mb-6 md:text-4xl">Next Launch</h1>
           <div className="p-4 flex w-full mb-16 flex-col lg:flex-row">
             <div className="flex-1 mb-4 lg:mb-0 relative">
@@ -109,7 +110,9 @@ const Launches = () => {
             })}
           </div>
         </div>
-      ) : null}
+      ) : (
+        <LoadingSpinner />
+      )}
     </Layout>
   )
 }
