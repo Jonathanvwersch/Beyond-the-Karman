@@ -20,6 +20,7 @@ const Launches = () => {
       }
     })()
   }, [])
+  console.log(launches[0].success)
 
   return (
     <Layout>
@@ -59,7 +60,9 @@ const Launches = () => {
               <h4 className="text-white text-lg text-center mb-4 max-sm:text-sm">
                 {launches[0].launch_service_provider.name}
               </h4>
-              <Timer time={launches[0].net} />
+              {launches[0].status.name === "Success" ? null : (
+                <Timer time={launches[0].net} />
+              )}
             </div>
           </div>
 
@@ -103,7 +106,9 @@ const Launches = () => {
                     <h4 className="text-white text-center mb-4 text-sm lg:text-lg">
                       {launch.launch_service_provider.name}
                     </h4>
-                    <Timer time={launch.net} />
+                    {launch.status.name === "Success" ? null : (
+                      <Timer time={launch.net} />
+                    )}
                   </div>
                 </div>
               )

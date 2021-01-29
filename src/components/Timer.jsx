@@ -29,14 +29,18 @@ function Timer({ time }) {
   }, [timeElapsed, days, hours, launchTime, minutes])
 
   const displayDays =
-    days || days === 0 ? (days < 10 ? `0${days}` : days) : "??"
+    days || days === 0 ? (days < 10 && hours > 0 ? `0${days}` : days) : "??"
   const displayHours =
-    hours || hours === 0 ? (hours < 10 ? `0${hours}` : hours) : "??"
+    hours || hours === 0
+      ? hours < 10 && hours > 0
+        ? `0${hours}`
+        : hours
+      : "??"
   const displayMinutes =
     minutes || minutes === 0
       ? minutes < 0
         ? minutes + 60
-        : minutes < 10
+        : minutes < 10 && minutes > 0
         ? `0${minutes}`
         : minutes
       : "??"
@@ -44,7 +48,7 @@ function Timer({ time }) {
     seconds || seconds === 0
       ? seconds < 0
         ? seconds + 60
-        : seconds < 10
+        : seconds < 10 && seconds > 0
         ? `0${seconds}`
         : seconds
       : "??"
@@ -52,11 +56,10 @@ function Timer({ time }) {
   const launchDate = new Date(time)
 
   let launchDay = launchDate.getDate()
-  launchDay = launchDay < 10 && launchDay > 0 ? `0${launchDay}` : launchDay
+  launchDay = launchDay < 10 ? `0${launchDay}` : launchDay
 
   let launchMonth = launchDate.getMonth() + 1
-  launchMonth =
-    launchMonth < 10 && launchMonth > 0 ? `0${launchMonth}` : launchMonth
+  launchMonth = launchMonth < 10 ? `0${launchMonth}` : launchMonth
 
   const launchYear = launchDate.getFullYear()
   let [hour, minute, second] = launchDate
