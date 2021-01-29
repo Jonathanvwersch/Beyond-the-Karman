@@ -40,7 +40,8 @@ const Launches = () => {
                 className="flex text-white bg-green-500 font-bold px-2 md:px-4 items-center rounded z-10 absolute right-2 top-2"
                 style={{
                   backgroundColor: `${
-                    launches[0].status.name === "Go" || "Success"
+                    launches[0].status.name === "Go" ||
+                    launches[0].status.name === "Success"
                       ? "green"
                       : launches[0].status.name === "TBD"
                       ? "orange"
