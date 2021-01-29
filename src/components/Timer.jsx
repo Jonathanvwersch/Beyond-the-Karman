@@ -52,7 +52,7 @@ function Timer({ time }) {
   const launchDate = new Date(time)
 
   let launchDay = launchDate.getDate()
-  launchDay = launchDay < 10 && launchday > 0 ? `0${launchDay}` : launchDay
+  launchDay = launchDay < 10 && launchDay > 0 ? `0${launchDay}` : launchDay
 
   let launchMonth = launchDate.getMonth() + 1
   launchMonth =
