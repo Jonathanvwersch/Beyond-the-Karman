@@ -20,7 +20,6 @@ const Launches = () => {
       }
     })()
   }, [])
-  console.log(launches[0].success)
 
   return (
     <Layout>
