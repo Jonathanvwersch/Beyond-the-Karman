@@ -29,18 +29,14 @@ function Timer({ time }) {
   }, [timeElapsed, days, hours, launchTime, minutes])
 
   const displayDays =
-    days || days === 0 ? (days < 10 && days > 0 ? `0${days}` : days) : "??"
+    days || days === 0 ? (days < 10 ? `0${days}` : days) : "??"
   const displayHours =
-    hours || hours === 0
-      ? hours < 10 && hours > 0
-        ? `0${hours}`
-        : hours
-      : "??"
+    hours || hours === 0 ? (hours < 10 ? `0${hours}` : hours) : "??"
   const displayMinutes =
     minutes || minutes === 0
       ? minutes < 0
         ? minutes + 60
-        : minutes < 10 && minutes > 0
+        : minutes < 10
         ? `0${minutes}`
         : minutes
       : "??"
@@ -48,7 +44,7 @@ function Timer({ time }) {
     seconds || seconds === 0
       ? seconds < 0
         ? seconds + 60
-        : seconds < 10 && seconds > 0
+        : seconds < 10
         ? `0${seconds}`
         : seconds
       : "??"

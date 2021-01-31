@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 import Layout from "../components/layout"
 import LoadingSpinner from "../components/LoadingSpinner"
 import SEO from "../components/seo"
+import Button from "@material-ui/core/Button"
+import ImportContactsIcon from "@material-ui/icons/ImportContacts"
 
 const News = () => {
   const [news, setNews] = useState()
@@ -42,36 +44,39 @@ const News = () => {
           <div className="w-full flex flex-wrap">
             {news.map(newsStory => {
               return (
-                <a href={newsStory.url}>
-                  <div
-                    key={newsStory.id}
-                    className="p-6 md:p-8 flex cursor-pointer flex-col md:flex-row mb-10 w-full rounded-xl bg-card hover:bg-card-hover"
-                  >
-                    <img
-                      className="object-cover rounded-xl mb-6 md:mb-0 w-full md:w-2/5 h-48 md:h-64"
-                      src={newsStory.imageUrl}
-                      alt={newsStory.title}
-                    ></img>
-                    <div className="flex flex-col items-center justify-between md:ml-8 w-full">
-                      <div>
-                        <div className="flex w-full text-gray-400 justify-between mb-4 text-sm">
-                          <h4>{newsStory.newsSite}</h4>
-                          <h4>{getTime(newsStory.publishedAt)}</h4>
-                        </div>
-                        <h3 className="text-white mb-2 text-md md:text-lg lg:text-xl text-center font-bold">
-                          {newsStory.title}
-                        </h3>
-                        <p className="text-gray-200 tex-center">
-                          {newsStory.summary}
-                        </p>
+                <div className="p-6 md:p-8 flex flex-col md:flex-row mb-10 w-full rounded-xl bg-card">
+                  <img
+                    className="object-cover rounded-xl md:flex-1/3 mb-6 md:max-w-1/3 md:mb-0 h-40 sm:h-56 md:h-64"
+                    src={newsStory.imageUrl}
+                    alt={newsStory.title}
+                  ></img>
+                  <div className="flex flex-col md:pl-8 md:pt-4 md:pb-4 md:flex-2/3 md:max-w-2/3 justify-between w-full">
+                    <div>
+                      <div className="flex text-gray-400 justify-between mb-4 text-sm">
+                        <h4>{newsStory.newsSite}</h4>
+                        <h4>{getTime(newsStory.publishedAt)}</h4>
                       </div>
-
-                      <button className="rounded-md px-4 py-2 mt-6 bg-gray-900 text-white hover:bg-gray-800">
-                        Read article
-                      </button>
+                      <h3 className="text-white mb-2 text-md md:text-lg lg:text-xl text-center font-bold">
+                        {newsStory.title}
+                      </h3>
                     </div>
+                    <a
+                      key={newsStory.id}
+                      href={newsStory.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full md:mt-0 mt-4 flex items-center justify-center"
+                    >
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<ImportContactsIcon />}
+                      >
+                        Read article
+                      </Button>
+                    </a>
                   </div>
-                </a>
+                </div>
               )
             })}
           </div>

@@ -36,6 +36,12 @@ const Header = () => {
           >
             Launches
           </Link>
+          <Link
+            to="/events"
+            className=" mr-6 max-sm:mr-0 max-sm:mb-6  hover:text-gray-400"
+          >
+            Events
+          </Link>
         </div>
         <div
           className="group flex flex-col h-10 w-10 justify-center items-end"

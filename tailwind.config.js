@@ -10,7 +10,7 @@ module.exports = {
         }),
        fontFamily: {
         mono: ["Space Mono", "monospace"],
-        sans: ["Space Grotesk"]
+        sans: ["Roboto"]
       },
       screens: {
         "max-2xl": { max: "1535px" },
@@ -45,8 +45,18 @@ module.exports = {
       },
 
       backgroundColor : {
-        'card': "rgba(56, 56, 255, 0.1)",
+        'card': "rgba(56, 56, 255, 0.2)",
         'card-hover': "rgba(56, 56, 255, 0.2)"
+      },
+
+      maxWidth: {
+       '1/3': '33.333333%',
+       '2/3': '66.6666667%',
+      },
+
+      flex: {
+        '1/3': '0 0 33.33333%',
+        '2/3': '0 0 66.666667'
       }
         
     },
