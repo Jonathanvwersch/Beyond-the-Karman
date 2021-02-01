@@ -6,27 +6,35 @@ function Timer({ time }) {
   const [minutes, setMinutes] = useState()
   const [hours, setHours] = useState()
   const [seconds, setSeconds] = useState()
-  const [timeElapsed, setTimeElapsed] = useState(new Date())
+  const [currTime, setCurrTime] = useState(new Date())
+  const [timeDif, setTimeDif] = useState()
+  const [direction, setDirection] = useState(0)
 
   useEffect(() => {
-    const interval = setInterval(() => setTimeElapsed(new Date()), 1000)
-    const newTime = launchTime.getTime() - timeElapsed.getTime()
-    setDays(Math.floor(newTime / (3600 * 24 * 1000)))
+    const interval = setInterval(() => setCurrTime(new Date()), 1000)
+    if (launchTime.getTime() - currTime.getTime() > 0)
+      setTimeDif(launchTime.getTime() - currTime.getTime())
+    else {
+      setTimeDif(currTime.getTime() - launchTime.getTime())
+      setDirection(1)
+    }
 
-    setHours(Math.floor(newTime / (3600 * 1000) - days * 24))
+    setDays(Math.floor(timeDif / (3600 * 24 * 1000)))
 
-    setMinutes(Math.floor((newTime / (3600 * 1000) - days * 24 - hours) * 60))
+    setHours(Math.floor(timeDif / (3600 * 1000) - days * 24))
+
+    setMinutes(Math.floor((timeDif / (3600 * 1000) - days * 24 - hours) * 60))
 
     setSeconds(
       Math.floor(
-        ((newTime / (3600 * 1000) - days * 24 - hours) * 60 - minutes) * 60
+        ((timeDif / (3600 * 1000) - days * 24 - hours) * 60 - minutes) * 60
       )
     )
 
     return () => {
       clearInterval(interval)
     }
-  }, [timeElapsed, days, hours, launchTime, minutes])
+  }, [currTime, days, hours, launchTime, minutes, timeDif])
 
   const displayDays =
     days || days === 0 ? (days < 10 ? `0${days}` : days) : "??"
@@ -67,6 +75,11 @@ function Timer({ time }) {
   return (
     <div className="flex flex-col items-center text-gray-200">
       <div className="flex py-2 h-full items-center">
+        <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
+          <h1 className="font-mono text-2xl lg:text-4xl">
+            {direction ? "T+" : "T-"}
+          </h1>
+        </div>
         <div className="h-full flex flex-col flex-1 justify-center items-center mr-6 lg:mr-8">
           <h1 className="font-mono text-2xl lg:text-4xl">{displayDays}</h1>
           <h3 className="text-md">Days</h3>
