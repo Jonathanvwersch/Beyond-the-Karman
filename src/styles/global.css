@@ -48,6 +48,5 @@ body {
 /*# sourceMappingURL=global.css.map */
 
 *:focus {
-  outline: none !important;
   box-sizing: border-box;
 }

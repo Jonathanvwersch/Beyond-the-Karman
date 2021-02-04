@@ -1,5 +1,5 @@
 import React from "react"
-import CardButtons from "./CardButtons"
+import CardButtons from "./CardButtons/CardButtons"
 import Timer from "./Timer"
 
 const TimerLaunchCardUpcoming = ({ data }) => {
@@ -19,7 +19,7 @@ const TimerLaunchCardUpcoming = ({ data }) => {
           className="flex text-white bg-green-500 px-2 md:px-4 font-bold items-center rounded z-10 absolute right-2 top-2"
           style={{
             backgroundColor: `${
-              data.status.name === "Go"
+              data.status.name === "Go" || data.status.name === "Success"
                 ? "green"
                 : data.status.name === "TBD"
                 ? "orange"
@@ -37,7 +37,7 @@ const TimerLaunchCardUpcoming = ({ data }) => {
         <h4 className="text-white text-center mb-4 text-sm lg:text-lg">
           {data.launch_service_provider.name}
         </h4>
-        {data.status.name === "Success" ? null : <Timer time={data.net} />}
+        <Timer time={data.net} />
         <CardButtons watchLink={data.vidURLs} />
       </div>
     </div>

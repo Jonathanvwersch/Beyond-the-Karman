@@ -63,8 +63,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      width: ["hover", "focus", "responsive", "group-hover"],
-
+      width: ["hover", "focus", "responsive", "group-hover", "group-focus"],
+      outline:["focus", "group-focus"],
     },
   },
   plugins: [],

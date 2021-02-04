@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import CardButtons from "../components/CardButtons"
+import CardButtons from "../components/CardButtons/CardButtons"
 import Layout from "../components/layout"
 import LoadingSpinner from "../components/LoadingSpinner"
 import SEO from "../components/seo"
@@ -24,7 +24,7 @@ const Events = () => {
 
   return (
     <Layout>
-      <SEO title="Launches" />
+      <SEO title="Events" />
       {events ? (
         <div className="mt-24 mb-100 btk-container bg-launch-image bg-contain">
           <h1 className="text-white mt-10 text-2xl mb-6 md:text-4xl">

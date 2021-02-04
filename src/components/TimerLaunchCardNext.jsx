@@ -1,8 +1,11 @@
 import React from "react"
 import Timer from "../components/Timer"
-import CardButtons from "./CardButtons"
+import CardButtons from "./CardButtons/CardButtons"
 
 function TimerLaunchCardNext({ data }) {
+  if (data.name === "Long March 3B | TJSW-6") {
+    console.log(data.net)
+  }
   return (
     <div className="p-4 md:p-8 flex bg-card w-full mb-16 flex-col rounded-xl lg:flex-row">
       <div className="flex-1 mb-4 lg:mb-0 relative">
@@ -33,7 +36,7 @@ function TimerLaunchCardNext({ data }) {
         <h4 className="text-white text-lg text-center mb-4 max-sm:text-sm">
           {data.launch_service_provider.name}
         </h4>
-        {data.status.name === "Success" ? null : <Timer time={data.net} />}
+        <Timer time={data.net} />
         <CardButtons />
       </div>
     </div>

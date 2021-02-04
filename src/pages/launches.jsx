@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import LoadingSpinner from "../components/LoadingSpinner"
 import SEO from "../components/seo"
 import TimerLaunchCardNext from "../components/TimerLaunchCardNext"
@@ -7,6 +7,7 @@ import TimerLaunchCardUpcoming from "../components/TimerLaunchCardUpcoming"
 
 const Launches = () => {
   const [launches, setLaunches] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     ;(async () => {
@@ -16,6 +17,7 @@ const Launches = () => {
         )
         const launchData = await response.json()
         setLaunches(launchData.results)
+        setLoading(false)
       } catch (err) {
         console.log(err)
       }
@@ -25,7 +27,7 @@ const Launches = () => {
   return (
     <Layout>
       <SEO title="Launches" />
-      {launches ? (
+      {!loading ? (
         <div className="mt-24 mb-100 btk-container bg-launch-image bg-contain">
           <h1 className="text-white mt-10 text-2xl mb-6 md:text-4xl">
             Next Launch
