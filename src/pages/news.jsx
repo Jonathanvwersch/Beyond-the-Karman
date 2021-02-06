@@ -29,8 +29,8 @@ const News = () => {
           <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
             Latest Stories
           </h1>
-          <div className="flex flex-col h-full md:flex-none md:grid md:grid-cols-2 md:gap-4 md:h-84">
-            <div className="w-full h-60 md:h-full sm:h-80 mb-8">
+          <div className="flex flex-col md:flex-none md:grid md:grid-cols-2 md:auto-cols-fr	md:gap-4 md:h-96">
+            <div className="w-full h-68 mb-8 md:h-full sm:h-84 md:mb-0">
               <NewsCard
                 title={news[0].title}
                 date={news[0].publishedAt}
@@ -39,12 +39,12 @@ const News = () => {
                 large={true}
               />
             </div>
-            <div className="flex flex-col sm:grid-cols-2 sm:grid-rows-2 sm:grid-rows-auto sm:flex-none sm:grid sm:gap-2">
+            <div className="flex flex-col sm:h-96 sm:grid-cols-2 sm:grid-rows-2 sm:grid-rows-auto sm:flex-none sm:grid sm:gap-2">
               {news.slice(1, 5).map(newsStory => {
                 return (
                   <div
                     key={newsStory.id}
-                    className="w-full h-40 mb-4 md:h-full sm:mb-0"
+                    className="w-full h-40 sm:h-full mb-4 sm:mb-0"
                   >
                     <NewsCard
                       title={newsStory.title}
