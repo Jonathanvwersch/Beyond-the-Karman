@@ -25,7 +25,7 @@ const News = () => {
     <Layout>
       <SEO title="News" />
       {news ? (
-        <div className="mt-14 mb-100 btk-container bg-launch-image bg-contain">
+        <div className="mt-14 btk-container bg-launch-image bg-contain">
           <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
             Latest Stories
           </h1>
@@ -61,7 +61,7 @@ const News = () => {
           <h2 className="text-white mt-10 text-xl mb-10 md:text-3xl">
             More Stories
           </h2>
-          <div className="flex flex-col sm:grid-cols-2 sm:grid-rows-2 sm:grid-rows-auto sm:flex-none sm:grid sm:gap-2">
+          <div className="flex flex-col mb-16 sm:grid-cols-2 sm:grid-rows-2 sm:grid-rows-auto sm:flex-none sm:grid sm:gap-2">
             {news.slice(6).map(newsStory => {
               return (
                 <div
