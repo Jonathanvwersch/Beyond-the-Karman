@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
-import Time from "./Time"
-import TimerSection from "./TimerSection"
+import Time from "../Time/Time"
+import TimerSection from "../TimerSection/TimerSection"
 
 function Timer({ time }) {
   const launchTime = new Date(time)

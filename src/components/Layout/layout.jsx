@@ -1,14 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./Header/header"
-import Footer from "./Footer/Footer"
+import Footer from "../Footer/Footer"
+import Header from "../Header/header"
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main
+        className="btk-container bg-launch-image bg-contain mt-24 mb-36"
+        style={{ flex: "1 0 auto" }}
+      >
+        {children}
+      </main>
       <Footer />
     </>
   )

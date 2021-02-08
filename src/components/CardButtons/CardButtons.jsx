@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import PlayArrowIcon from "@material-ui/icons/PlayArrow"
 import InfoIcon from "@material-ui/icons/Info"
+import { Link } from "gatsby"
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-function CardButtons({ watchLink }) {
+function CardButtons({ watchLink, slug, data }) {
   const classes = useStyles()
 
   return (
@@ -33,16 +34,17 @@ function CardButtons({ watchLink }) {
           </Button>
         </a>
       ) : null}
-
-      <Button
-        variant="contained"
-        color="default"
-        size="small"
-        className={classes.button}
-        startIcon={<InfoIcon />}
-      >
-        More info
-      </Button>
+      <Link to={`${slug}`} state={data}>
+        <Button
+          variant="contained"
+          color="default"
+          size="small"
+          className={classes.button}
+          startIcon={<InfoIcon />}
+        >
+          More info
+        </Button>
+      </Link>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import { Link } from "gatsby"
 import React from "react"
-import SEO from "../components/seo"
+import SEO from "../components/SEO/seo"
 
 const NotFoundPage = () => (
-  <div className="flex items-center absolute inset-0 justify-center text-center px-6 bg-cover bg-launch-image">
+  <div className="flex items-center absolute inset-0 justify-center text-center px-6 bg-contain bg-launch-image">
     <SEO title="404" />
     <div className="flex items-center justify-center flex-col">
       <h1 className="text-white font-mono text-xl md:text-4xl mb-6">You're lost in the abyss</h1>

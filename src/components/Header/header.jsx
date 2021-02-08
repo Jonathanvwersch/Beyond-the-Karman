@@ -2,6 +2,10 @@ import React, { useState } from "react"
 import Logo from "../../images/Logo.jsx"
 import { Link } from "gatsby"
 
+const activeStyles = {
+  textDecoration: "underline",
+}
+
 const Header = () => {
   const [open, setOpen] = useState(false)
 
@@ -29,6 +33,7 @@ const Header = () => {
                 key={index}
                 to={`/${item.slug}`}
                 className="p-3 hover:text-gray-400"
+                activeStyle={activeStyles}
               >
                 {item.link}
               </Link>

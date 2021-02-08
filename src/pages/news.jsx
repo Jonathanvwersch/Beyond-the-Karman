@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/layout"
-import LoadingSpinner from "../components/LoadingSpinner"
-import NewsCard from "../components/NewsCard"
-import SEO from "../components/seo"
+import Layout from "../components/Layout/layout"
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner"
+import NewsCard from "../components/NewsCard/NewsCard"
+import SEO from "../components/SEO/seo"
 
 const News = () => {
   const [news, setNews] = useState()
@@ -15,6 +15,7 @@ const News = () => {
         )
         const jsonData = await response.json()
         setNews(jsonData)
+        console.log(news)
       } catch (err) {
         console.log(err)
       }
@@ -25,7 +26,7 @@ const News = () => {
     <Layout>
       <SEO title="News" />
       {news ? (
-        <div className="mt-14 btk-container bg-launch-image bg-contain">
+        <div>
           <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
             Latest Stories
           </h1>

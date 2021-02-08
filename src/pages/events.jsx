@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
-import Layout from "../components/layout"
-import LoadingSpinner from "../components/LoadingSpinner"
-import SEO from "../components/seo"
-import TimerCard from "../components/TimerCard"
+import Layout from "../components/Layout/layout"
+import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner"
+import SEO from "../components/SEO/seo"
+import TimerCard from "../components/TimerCard/TimerCard"
 
 const Events = () => {
   const [events, setEvents] = useState()
@@ -25,7 +25,7 @@ const Events = () => {
     <Layout>
       <SEO title="Events" />
       {events ? (
-        <div className="mt-14 mb-100 btk-container bg-launch-image bg-contain">
+        <div>
           <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
             Next Event
           </h1>

@@ -1,10 +1,18 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner"
 
 function Hero() {
-  return (
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setLoading(false)
+  }, [])
+  return loading ? (
+    <LoadingSpinner />
+  ) : (
     <div
       data-testid="hero"
-      className="px-8 md:px-10 lg:px-12 bg-cover bg-hero-image absolute bottom-0 left-0 w-screen h-screen flex items-start flex-col justify-center"
+      className="px-8 md:px-10 lg:px-12 bg-cover bg-hero-image absolute bottom-0 left-0 w-full h-screen flex items-start flex-col justify-center"
     >
       <h1 className="max-sm:text-4xl text-5xl text-white leading-normal mb-4">
         Your home for everything space related
