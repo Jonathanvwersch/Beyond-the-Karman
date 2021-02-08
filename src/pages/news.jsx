@@ -31,7 +31,7 @@ const News = () => {
             Latest Stories
           </h1>
           <div className="flex flex-col md:flex-none md:grid md:grid-cols-2 md:auto-cols-fr	md:gap-4 md:h-96">
-            <div className="w-full h-68 mb-8 md:h-full sm:h-84 md:mb-0">
+            <div className="w-full h-72 mb-4 md:h-full sm:h-80 md:mb-0">
               <NewsCard
                 title={news[0].title}
                 date={news[0].publishedAt}

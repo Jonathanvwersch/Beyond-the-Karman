@@ -28,6 +28,7 @@ module.exports = {
       options: {
         fonts: [
           `Roboto`,
+          `Space Mono`
         ],
         display: 'swap'
       }
