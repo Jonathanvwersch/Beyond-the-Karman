@@ -22,7 +22,7 @@ const Launches = () => {
   return (
     <>
       {launches ? (
-        <div>
+        <div className="btk-container bg-launch-image bg-contain">
           <h1 className="text-white mt-10 text-2xl mb-6 md:text-4xl">
             Next Launch
           </h1>

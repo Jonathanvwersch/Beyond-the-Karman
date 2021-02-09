@@ -36,7 +36,7 @@ function LaunchInfo({ location }) {
     <div>
       <SEO title={launchData.name} />
 
-      <div className="mt-10">
+      <div className="mt-10 btk-container bg-launch-image bg-cover">
         <div
           className="group inline-flex cursor-pointer"
           tabIndex="0"
@@ -72,16 +72,21 @@ function LaunchInfo({ location }) {
         />
 
         {launchInfo ? (
-          <AgencyCard
-            logo={launchInfo.launch_service_provider.logo_url}
-            name={launchInfo.launch_service_provider.name}
-            description={launchInfo.launch_service_provider.description}
-            website={launchInfo.launch_service_provider.info_url}
-            wiki={launchInfo.launch_service_provider.wiki_url}
-          />
-        ) : null}
+          <>
+            <AgencyCard
+              logo={launchInfo.launch_service_provider.logo_url}
+              name={launchInfo.launch_service_provider.name}
+              description={launchInfo.launch_service_provider.description}
+              website={launchInfo.launch_service_provider.info_url}
+              wiki={launchInfo.launch_service_provider.wiki_url}
+            />
 
-        {/* <RocketCard /> */}
+            <RocketCard
+              name={launchInfo.launch_service_provider.name}
+              image={launchInfo.launch_service_provider.image_url}
+            />
+          </>
+        ) : null}
       </div>
     </div>
   )
