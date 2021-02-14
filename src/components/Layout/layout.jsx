@@ -7,9 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="bg-black mt-24 mb-36" style={{ flex: "1 0 auto" }}>
-        {children}
-      </main>
+      <main className="bg-black mt-24 mb-36">{children}</main>
       <Footer />
     </>
   )

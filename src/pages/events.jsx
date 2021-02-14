@@ -26,31 +26,33 @@ const Events = () => {
       <SEO title="Events" />
       {events ? (
         <div className="btk-container bg-launch-image bg-contain">
-          <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
-            Next Event
-          </h1>
-          <TimerCard
-            name={events[0].name}
-            time={events[0].date}
-            image={events[0].feature_image}
-            watchLink={events.video_url}
-            next={true}
-          />
+          <div className="btk-container-inner flex-col">
+            <h1 className="text-white mt-10 text-2xl mb-10 md:text-4xl">
+              Next Event
+            </h1>
+            <TimerCard
+              name={events[0].name}
+              time={events[0].date}
+              image={events[0].feature_image}
+              watchLink={events.video_url}
+              next={true}
+            />
 
-          <h2 className="text-white text-xl mb-10 md:text-3xl">
-            Upcoming Events
-          </h2>
+            <h2 className="text-white text-xl mb-10 md:text-3xl">
+              Upcoming Events
+            </h2>
 
-          {events.slice(1).map(event => {
-            return (
-              <TimerCard
-                name={event.name}
-                time={event.date}
-                image={event.feature_image}
-                watchLink={event.video_url}
-              />
-            )
-          })}
+            {events.slice(1).map(event => {
+              return (
+                <TimerCard
+                  name={event.name}
+                  time={event.date}
+                  image={event.feature_image}
+                  watchLink={event.video_url}
+                />
+              )
+            })}
+          </div>
         </div>
       ) : (
         <LoadingSpinner />
