@@ -8,12 +8,12 @@ function RocketCard({ image, name, description, specs }) {
         <div className="p-4 md:p-8 flex flex-col lg:flex-row bg-card items-center w-full mb-16">
           <div className="flex-1 lg:flex-1/3 lg:max-w-1/3 mb-4 lg:mb-0 relative">
             <img
-              className="h-56 md:h-96 w-full object-cover"
+              className="h-56 md:h-full  max-h-96 w-full object-cover"
               src={image}
               alt={name}
             ></img>
           </div>
-          <div className="flex flex-1 lg:flex-2/3 lg:max-w-2/3 flex-col items-center h-56 md:h-96">
+          <div className="flex flex-1 lg:flex-2/3 lg:max-w-2/3 flex-col items-center h-56 md:h-full">
             <h3 className="text-white text-xl md:text-2xl display-inline mb-4">
               {name}
             </h3>
